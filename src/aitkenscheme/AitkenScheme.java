@@ -12,11 +12,17 @@ public class AitkenScheme {
 
         double[] x = new double[]{5, 10, 15, 20, 25, 30, 35, 40};
         double[] y = new double[]{1.71, 2.154, 2.466, 2.714, 2.924, 3.107, 3.271, 3.42};
-        double arg = 42;
+        double arg = 12;
 
         AitkenScheme a = new AitkenScheme(x, y);
 
         System.out.println(a.Calculate(arg) + " \nрезультирующая степень многочлена:" + a.power);
+        for (int i = 0; i < a.res.length; i++) {
+            for (int j = 0; j < a.res[i].length; j++) {
+                System.out.print(new java.text.DecimalFormat("#.####").format(a.res[i][j])+" | ");
+            }
+            System.out.print("\n");
+        }
     }
 
     public AitkenScheme(double[] x, double[] y) {
